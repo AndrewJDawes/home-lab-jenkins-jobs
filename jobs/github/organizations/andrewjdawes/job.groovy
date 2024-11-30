@@ -3,14 +3,14 @@ organizationFolder documentation: https://jenkins-development.webfxinteractive.c
 *************************************************************************************************************/
 
 //Name of the job, should be lowercase, dash delimited.
-organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
+organizationFolder('jobs-v1/github/organizations/andrewjdawes') {
 
-    displayName("GitHub Organization Jobs")
+    displayName("AndrewJDawes")
 
     organizations {
         github {
             apiUri("https://api.github.com")
-            repoOwner("codekaizen-github")
+            repoOwner("AndrewJDawes")
             credentialsId("github-app-doer")
             traits {
                 //Which repos to specifically include/exclude
@@ -45,7 +45,7 @@ organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
     projectFactories {
         workflowMultiBranchProjectFactory {
             //Include the repo's branch in the Organization folder if there is a Jenkinsfile here
-            scriptPath('.jenkins/github/organizations/codekaizen-github/Jenkinsfile')
+            scriptPath('.jenkins/github/organizations/andrewjdawes/Jenkinsfile')
         }
     }
 
