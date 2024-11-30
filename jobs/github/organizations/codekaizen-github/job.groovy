@@ -35,6 +35,7 @@ organizationFolder('jobs-v1/github/organizations/codekaizen-github/deploy') {
                 // }
                 headWildcardFilter {
                     includes("deploy/*")
+                    excludes("")
                     // excludes("modified-files*")
                 }
             }
