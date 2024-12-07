@@ -11,7 +11,7 @@ organizationFolder('jobs-v1/github/organizations/andrewjdawes') {
         github {
             apiUri("https://api.github.com")
             repoOwner("AndrewJDawes")
-            credentialsId("jenkins-github-andrewjdawes")
+            credentialsId("github-app-user-andrewjdawes")
             traits {
                 //Which repos to specifically include/exclude
                 // sourceWildcardFilter {

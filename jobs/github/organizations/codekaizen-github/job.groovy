@@ -11,7 +11,7 @@ organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
         github {
             apiUri("https://api.github.com")
             repoOwner("codekaizen-github")
-            credentialsId("jenkins-github-codekaizen")
+            credentialsId("github-app-organization-codekaizen")
             traits {
                 //Which repos to specifically include/exclude
                 // sourceWildcardFilter {
