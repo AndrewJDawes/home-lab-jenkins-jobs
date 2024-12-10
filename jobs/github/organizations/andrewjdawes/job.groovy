@@ -50,14 +50,8 @@ organizationFolder('jobs-v1/github/organizations/andrewjdawes') {
     }
 
     triggers {
-        // githubPush()
-        // upstream {
-        //     upstreamProjects("seed-job")
-        //     threshold("SUCCESS")
-        // }
-        upstream('seed-job')
         periodicFolderTrigger {
-            interval("1h")
+            interval("10m")
         }
     }
 
