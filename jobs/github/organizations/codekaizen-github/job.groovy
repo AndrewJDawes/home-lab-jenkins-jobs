@@ -49,6 +49,14 @@ organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
         }
     }
 
+    triggers {
+        githubPush()
+        upstream {
+            upstreamProjects("seed-job")
+            threshold("SUCCESS")
+        }
+    }
+
     //keep old job logs
     orphanedItemStrategy {
         discardOldItems {
