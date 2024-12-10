@@ -55,6 +55,9 @@ organizationFolder('jobs-v1/github/organizations/andrewjdawes') {
             upstreamProjects("seed-job")
             threshold("SUCCESS")
         }
+        periodicFolderTrigger {
+            interval("1h")
+        }
     }
 
     //keep old job logs
