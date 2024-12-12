@@ -3,7 +3,7 @@ organizationFolder documentation: https://jenkins-development.webfxinteractive.c
 *************************************************************************************************************/
 
 //Name of the job, should be lowercase, dash delimited.
-organizationFolder('jobs-v1/github/organizations/andrewjdawes/deploy') {
+organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
 
     displayName("AndrewJDawes GitHub Deploy")
 
