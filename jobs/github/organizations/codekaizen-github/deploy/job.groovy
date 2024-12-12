@@ -3,9 +3,9 @@ organizationFolder documentation: https://jenkins-development.webfxinteractive.c
 *************************************************************************************************************/
 
 //Name of the job, should be lowercase, dash delimited.
-organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
+organizationFolder('jobs-v1/github/organizations/codekaizen-github/deploy') {
 
-    displayName("codekaizen-github")
+    displayName("CodeKaizen GitHub Deploy")
 
     organizations {
         github {
@@ -20,7 +20,7 @@ organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
                 // }
                 //Which branches to specifically include/exclude
                 gitHubBranchDiscovery {
-                    strategyId(3) //1 = Exclude branches that are also filled as PRs
+                    strategyId(3) //3 = All branches: Ignores whether the branch is also filed as a pull request and instead discovers all branches on the origin repository.
                 }
                 //Which PRs to specifically include/exclude from forks
                 // gitHubForkDiscovery {
@@ -45,7 +45,7 @@ organizationFolder('jobs-v1/github/organizations/codekaizen-github') {
     projectFactories {
         workflowMultiBranchProjectFactory {
             //Include the repo's branch in the Organization folder if there is a Jenkinsfile here
-            scriptPath('.jenkins/github/organizations/codekaizen-github/Jenkinsfile')
+            scriptPath('.jenkins/deploy/Jenkinsfile')
         }
     }
 
