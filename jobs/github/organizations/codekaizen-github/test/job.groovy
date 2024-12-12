@@ -35,7 +35,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/test') {
                     strategyId(2) //2 = The current pull request revision
                 }
                 headRegexFilter {
-                    regex("deploy\/.*|PR-[0-9]+")
+                    regex("deploy\\/.*|PR-[0-9]+")
                 }
                 // headWildcardFilter {
                 //     includes("deploy/*")
