@@ -13,6 +13,14 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
             atLeastDays("0")
             atMostDays("1")
         }
+        buildNamedBranches {
+            filters {
+                regex {
+                    regex("deploy/.*")
+                    caseSensitive(true)
+                }
+            }
+        }
     }
 
     organizations {
@@ -27,9 +35,9 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 //     excludes("")
                 // }
                 //Which branches to specifically include/exclude
-                // gitHubBranchDiscovery {
-                //     strategyId(3) //3 = All branches: Ignores whether the branch is also filed as a pull request and instead discovers all branches on the origin repository.
-                // }
+                gitHubBranchDiscovery {
+                    strategyId(3) //3 = All branches: Ignores whether the branch is also filed as a pull request and instead discovers all branches on the origin repository.
+                }
                 gitHubTagDiscovery()
                 //Which PRs to specifically include/exclude from forks
                 // gitHubForkDiscovery {
