@@ -7,6 +7,13 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
 
     displayName("CodeKaizen GitHub Deploy")
 
+    // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
+    buildStrategies {
+        buildTags {
+            atMostDays(1)
+        }
+    }
+
     organizations {
         github {
             apiUri("https://api.github.com")
