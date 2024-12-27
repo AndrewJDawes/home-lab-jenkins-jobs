@@ -22,7 +22,7 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/test') {
                 gitHubBranchDiscovery {
                     strategyId(3) //1 = Exclude branches that are also filled as PRs
                 }
-
+                gitHubTagDiscovery()
                 //Which PRs to specifically include/exclude from forks
                 gitHubForkDiscovery {
                     strategyId(2) //2 = The current pull request revision
