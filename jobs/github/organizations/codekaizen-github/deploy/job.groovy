@@ -10,7 +10,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
     // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
     buildStrategies {
         buildTags {
-            atMostDays(1)
+            atMostDays("1")
         }
     }
 
