@@ -58,7 +58,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 // }
                 // Filter to remove specific refs. Cannot distinguish between branches and tags.
                 headWildcardFilter {
-                    includes("")
+                    includes("*")
                     excludes("modified-files*")
                     // excludes("modified-files*")
                 }
