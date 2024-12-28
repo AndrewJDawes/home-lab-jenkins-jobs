@@ -7,22 +7,44 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
 
     displayName("AndrewJDawes GitHub Deploy")
 
+   // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
+    buildStrategies {
+        buildTags {
+            atLeastDays("0")
+            atMostDays("1")
+        }
+        // Even if the refs are found (Job added in Jenkins), only automatically Build the branches that match the regex.
+        buildNamedBranches {
+            filters {
+                regex {
+                    regex("deploy/.*")
+                    caseSensitive(true)
+                }
+            }
+        }
+    }
+
     organizations {
         github {
             apiUri("https://api.github.com")
-            repoOwner("AndrewJDawes")
-            credentialsId("github-app-user-andrewjdawes")
+            repoOwner("codekaizen-github")
+            credentialsId("github-app-organization-codekaizen")
             traits {
-                //Which repos to specifically include/exclude
+                // Which repos to specifically include/exclude
                 // sourceWildcardFilter {
                 //     includes("*jenkins-example-action-rsync-deployment")
                 //     excludes("")
                 // }
-                //Which branches to specifically include/exclude
+                // Discover all tags
+                gitHubTagDiscovery()
+                // Which branches to discover
                 gitHubBranchDiscovery {
                     strategyId(3) //3 = All branches: Ignores whether the branch is also filed as a pull request and instead discovers all branches on the origin repository.
                 }
-                gitHubTagDiscovery()
+                // Other refs to discover
+                // discoverOtherRefs {
+                //     ref("deploy/*")
+                // }
                 //Which PRs to specifically include/exclude from forks
                 // gitHubForkDiscovery {
                 //     strategyId(2) //2 = The current pull request revision
@@ -34,9 +56,10 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
                 // gitHubPullRequestDiscovery {
                 //     strategyId(2) //2 = The current pull request revision
                 // }
+                // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
-                    includes("deploy/*")
-                    excludes("")
+                    includes("*")
+                    excludes("modified-files*")
                     // excludes("modified-files*")
                 }
             }
@@ -56,9 +79,10 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
         }
     }
 
-    //keep old job logs
+    // Retain number of deleted repos and branches
     orphanedItemStrategy {
         discardOldItems {
+            // daysToKeep(30)
             numToKeep(5)
         }
     }

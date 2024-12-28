@@ -56,7 +56,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 // gitHubPullRequestDiscovery {
                 //     strategyId(2) //2 = The current pull request revision
                 // }
-                // Filter to remove specific refs. Cannot distinguish between branches and tags.
+                // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")
                     excludes("modified-files*")
@@ -79,9 +79,10 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
         }
     }
 
-    //keep old job logs
+    // Retain number of deleted repos and branches
     orphanedItemStrategy {
         discardOldItems {
+            // daysToKeep(30)
             numToKeep(5)
         }
     }
