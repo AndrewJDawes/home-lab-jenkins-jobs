@@ -54,11 +54,11 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 // gitHubPullRequestDiscovery {
                 //     strategyId(2) //2 = The current pull request revision
                 // }
-                headWildcardFilter {
-                    includes("deploy/*")
-                    excludes("")
-                    // excludes("modified-files*")
-                }
+                // headWildcardFilter {
+                //     includes("deploy/*")
+                //     excludes("")
+                //     // excludes("modified-files*")
+                // }
             }
         }
     }
