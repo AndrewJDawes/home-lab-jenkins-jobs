@@ -77,7 +77,7 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
 
     triggers {
         periodicFolderTrigger {
-            interval("24h")
+            interval("10m")
         }
     }
 
@@ -85,7 +85,7 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
     orphanedItemStrategy {
         discardOldItems {
             // daysToKeep(30)
-            numToKeep(0)
+            numToKeep(5)
         }
     }
 }
