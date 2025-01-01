@@ -77,7 +77,7 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
 
     triggers {
         periodicFolderTrigger {
-            interval("10m")
+            interval("24h")
         }
     }
 
