@@ -13,22 +13,24 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
             atLeastDays("0")
             atMostDays("1")
         }
+        buildAllBranches {}
+        skipInitialBuildOnFirstBranchIndexing()
         // Even if the refs are found (Job added in Jenkins), only automatically Build the branches that match the regex.
-        buildNamedBranches {
-            filters {
-                regex {
-                    regex("deploy/.*")
-                    caseSensitive(true)
-                }
-            }
-        }
+        // buildNamedBranches {
+        //     filters {
+        //         regex {
+        //             regex("deploy/.*")
+        //             caseSensitive(true)
+        //         }
+        //     }
+        // }
     }
 
     organizations {
         github {
             apiUri("https://api.github.com")
-            repoOwner("codekaizen-github")
-            credentialsId("github-app-organization-codekaizen")
+            repoOwner("missiedawes")
+            credentialsId("github-app-organization-missiedawes")
             traits {
                 // Which repos to specifically include/exclude
                 // sourceWildcardFilter {
@@ -59,7 +61,7 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
                 // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")
-                    excludes("modified-files*")
+                    // excludes("modified-files*")
                     // excludes("modified-files*")
                 }
             }
@@ -75,7 +77,7 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
 
     triggers {
         periodicFolderTrigger {
-            interval("10m")
+            interval("24h")
         }
     }
 
@@ -86,4 +88,5 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
             numToKeep(5)
         }
     }
+}
 }

@@ -13,15 +13,17 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
             atLeastDays("0")
             atMostDays("1")
         }
+        buildAllBranches {}
+        skipInitialBuildOnFirstBranchIndexing()
         // Even if the refs are found (Job added in Jenkins), only automatically Build the branches that match the regex.
-        buildNamedBranches {
-            filters {
-                regex {
-                    regex("deploy/.*")
-                    caseSensitive(true)
-                }
-            }
-        }
+        // buildNamedBranches {
+        //     filters {
+        //         regex {
+        //             regex("deploy/.*")
+        //             caseSensitive(true)
+        //         }
+        //     }
+        // }
     }
 
     organizations {
@@ -59,7 +61,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")
-                    excludes("modified-files*")
+                    // excludes("modified-files*")
                     // excludes("modified-files*")
                 }
             }
@@ -75,7 +77,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
 
     triggers {
         periodicFolderTrigger {
-            interval("10m")
+            interval("24h")
         }
     }
 
