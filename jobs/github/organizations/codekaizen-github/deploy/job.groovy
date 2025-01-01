@@ -61,7 +61,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")
-                    // excludes("modified-files*")
+                    excludes("")
                     // excludes("modified-files*")
                 }
             }
