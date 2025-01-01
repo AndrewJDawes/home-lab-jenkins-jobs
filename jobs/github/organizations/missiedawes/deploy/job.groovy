@@ -13,7 +13,7 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
             atLeastDays("0")
             atMostDays("1")
         }
-        buildRegularBranches()
+        buildAllBranches {}
         skipInitialBuildOnFirstBranchIndexing()
         // Even if the refs are found (Job added in Jenkins), only automatically Build the branches that match the regex.
         // buildNamedBranches {
