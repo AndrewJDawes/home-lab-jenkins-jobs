@@ -85,7 +85,7 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
     orphanedItemStrategy {
         discardOldItems {
             // daysToKeep(30)
-            numToKeep(5)
+            numToKeep(0)
         }
     }
 }
