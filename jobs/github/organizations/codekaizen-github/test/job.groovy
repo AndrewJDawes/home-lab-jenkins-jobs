@@ -55,7 +55,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/test') {
 
     triggers {
         periodicFolderTrigger {
-            interval("24h")
+            interval("1d")
         }
     }
 
