@@ -30,7 +30,7 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
         github {
             apiUri("https://api.github.com")
             repoOwner("AndrewJDawes")
-            credentialsId("github-app-organization-andrewjdawes")
+            credentialsId("github-app-user-andrewjdawes")
             traits {
                 // Which repos to specifically include/exclude
                 // sourceWildcardFilter {
