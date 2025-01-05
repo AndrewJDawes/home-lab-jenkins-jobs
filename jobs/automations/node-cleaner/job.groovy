@@ -20,8 +20,8 @@ pipelineJob('jobs-v2/automations/node-cleaner') {
                         url('https://github.com/codekaizen-github/jenkins-targeted-nodes-sh.git')
                         // credentials('github-app-doer') // Optional: If using credentials
                     }
-                    branches('refs/heads/main') // Change the branch if necessary
-                    // branch('refs/tags/v1') // Change the branch if necessary
+                    // branches('refs/heads/main') // Change the branch if necessary
+                    branch('refs/tags/v1') // Change the branch if necessary
                     scriptPath('Jenkinsfile') // Path to your Jenkinsfile in the repository
                 }
             }
@@ -33,14 +33,16 @@ pipelineJob('jobs-v2/automations/node-cleaner') {
     triggers {
         // This runs the job daily at midnight
         cron {
-            spec('@midnight')
+            // spec('@midnight')
+            // every minute
+            spec('* * * * *')
         }
     }
 
     parameters {
         // NODE_LABEL
-        // SCRIPT
         stringParam('NODE_LABEL', 'docker')
+        // SCRIPT
         // Prune
         stringParam('SCRIPT', 'docker system prune -f')
     }
