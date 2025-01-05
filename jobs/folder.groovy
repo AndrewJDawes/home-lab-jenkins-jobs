@@ -29,7 +29,7 @@ folder('jobs-v2/github/organizations/codekaizen-github') {
 }
 
 
-folder('automations') {
+folder('jobs-v2/automations') {
     displayName('Automations')
     description('This is the root folder for all automation jobs.')
 }
