@@ -33,9 +33,9 @@ pipelineJob('jobs-v2/automations/node-cleaner') {
     triggers {
         // This runs the job daily at midnight
         cron {
-            // spec('@midnight')
+            spec('@midnight')
             // every minute
-            spec('* * * * *')
+            // spec('* * * * *')
         }
     }
 
