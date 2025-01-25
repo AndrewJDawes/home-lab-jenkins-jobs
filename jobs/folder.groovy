@@ -33,3 +33,13 @@ folder('jobs-v2/automations') {
     displayName('Automations')
     description('This is the root folder for all automation jobs.')
 }
+
+folder('jobs-v2/codekaizen') {
+    displayName('CodeKaizen')
+    description('This is the root folder for CodeKaizen jobs.')
+}
+
+folder('jobs-v2/codekaizen/automations') {
+    displayName('CodeKaizen Automations')
+    description('This is the root folder for all CodeKaizen automation jobs.')
+}
