@@ -40,6 +40,6 @@ folder('jobs-v2/codekaizen') {
 }
 
 folder('jobs-v2/codekaizen/automations') {
-    displayName('CodeKaizen Automations')
+    displayName('Automations')
     description('This is the root folder for all CodeKaizen automation jobs.')
 }
