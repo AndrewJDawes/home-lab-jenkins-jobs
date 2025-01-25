@@ -40,7 +40,7 @@ pipelineJob('jobs-v2/codekaizen/automations/codekaizen-website-wp-backup') {
     }
 
     parameters {
-        stringParam('REGISTRY_URL', 'ghcr.io')
+        stringParam('REGISTRY_URL', 'https://ghcr.io')
         stringParam('REGISTRY_CREDENTIALS_ID', 'jenkins-github-ghcr-pat-token-andrewjdawes-username-password')
         stringParam('IMAGE', 'codekaizen-github/codekaizen-website-wp-backup:v1')
     }
