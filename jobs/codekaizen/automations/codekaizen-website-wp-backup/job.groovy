@@ -43,6 +43,7 @@ pipelineJob('jobs-v2/codekaizen/automations/codekaizen-website-wp-backup') {
         stringParam('REGISTRY_URL', 'https://ghcr.io')
         stringParam('REGISTRY_CREDENTIALS_ID', 'jenkins-github-ghcr-pat-token-andrewjdawes-username-password')
         stringParam('IMAGE', 'codekaizen-github/codekaizen-website-wp-backup:v1')
+        stringParam('SSH_KEY_CREDENTIALS_ID', 'application-deployment-previously-authorized-private-key')
     }
 
     properties {
