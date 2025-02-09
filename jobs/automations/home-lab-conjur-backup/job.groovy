@@ -17,7 +17,7 @@ pipelineJob('jobs-v2/automations/home-lab-conjur-backup') {
             scm {
                 git {
                     remote {
-                        url('https://github.com/codekaizen-github/home-lab-conjur-backup.git')
+                        url('https://github.com/AndrewJDawes/home-lab-conjur-backup.git')
                         // credentials('github-app-doer') // Optional: If using credentials
                     }
                     // branches('refs/heads/main') // Change the branch if necessary
@@ -42,7 +42,7 @@ pipelineJob('jobs-v2/automations/home-lab-conjur-backup') {
     parameters {
         stringParam('REGISTRY_URL', 'https://ghcr.io')
         stringParam('REGISTRY_CREDENTIALS_ID', 'jenkins-github-ghcr-pat-token-andrewjdawes-username-password')
-        stringParam('IMAGE', 'codekaizen-github/home-lab-conjur-backup:v1')
+        stringParam('IMAGE', 'andrewjdawes/home-lab-conjur-backup:v1')
         stringParam('SSH_KEY_CREDENTIALS_ID', 'application-deployment-previously-authorized-private-key')
     }
 
