@@ -28,6 +28,11 @@ folder('jobs-v2/github/organizations/codekaizen-github') {
     description('This is the root folder for all CodeKaizen GitHub jobs.')
 }
 
+folder('jobs-v2/github/organizations/umerx-github') {
+    displayName('Umerx GitHub')
+    description('This is the root folder for all Umerx GitHub jobs.')
+}
+
 
 folder('jobs-v2/automations') {
     displayName('Automations')
