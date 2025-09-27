@@ -14,6 +14,9 @@ organizationFolder('jobs-v2/github/organizations/umerx-github/deploy') {
             atMostDays("1")
         }
         buildAllBranches {}
+        buildChangeRequests {
+            ignoreUntrustedChanges(true)
+        }
         // Build branches on first index so we can use for CI/CD as part of pull requests.
         // skipInitialBuildOnFirstBranchIndexing()
         // Even if the refs are found (Job added in Jenkins), only automatically Build the branches that match the regex.
