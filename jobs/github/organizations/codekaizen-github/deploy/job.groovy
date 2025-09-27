@@ -16,7 +16,7 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
 
  // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
     buildStrategies {
-        skipInitialBuildOnFirstBranchIndexing()
+        // skipInitialBuildOnFirstBranchIndexing()
         buildRegularBranches()
         buildChangeRequests {
             ignoreTargetOnlyChanges(false)
