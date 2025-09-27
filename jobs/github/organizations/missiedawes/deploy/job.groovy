@@ -7,6 +7,11 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
 
     displayName("missiedawes GitHub Deploy")
 
+    suppressFolderAutomaticTriggering {
+        branches("*")
+        strategy("INDEXING")
+    }
+
     // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
     buildStrategies {
         skipInitialBuildOnFirstBranchIndexing()
