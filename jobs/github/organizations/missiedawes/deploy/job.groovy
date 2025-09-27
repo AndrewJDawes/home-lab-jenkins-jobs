@@ -42,8 +42,8 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
     organizations {
         github {
             apiUri("https://api.github.com")
-            repoOwner("umerx-github")
-            credentialsId("github-app-organization-umerx")
+            repoOwner("missiedawes")
+            credentialsId("github-app-user-missiedawes")
             traits {
                 // Which repos to specifically include/exclude
                 // sourceWildcardFilter {

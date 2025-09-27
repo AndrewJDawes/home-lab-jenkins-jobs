@@ -42,8 +42,8 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
     organizations {
         github {
             apiUri("https://api.github.com")
-            repoOwner("umerx-github")
-            credentialsId("github-app-organization-umerx")
+            repoOwner("codekaizen-github")
+            credentialsId("github-app-organization-codekaizen")
             traits {
                 // Which repos to specifically include/exclude
                 // sourceWildcardFilter {
