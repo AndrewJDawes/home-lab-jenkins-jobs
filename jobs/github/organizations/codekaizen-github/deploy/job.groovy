@@ -60,9 +60,11 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
                 //     }
                 // }
                 // //Which PRs to specifically include/exclude from origin
-                // gitHubPullRequestDiscovery {
-                //     strategyId(2) //2 = The current pull request revision
-                // }
+                gitHubPullRequestDiscovery {
+                    // strategyId(1) //1 = Merges the pull request with the current target branch revision
+                    // strategyId(2) //2 = The current pull request revision
+                    strategyId(3) //3 = Both the current pull request revision and the pull request merged with the current target branch revision
+                }
                 // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")

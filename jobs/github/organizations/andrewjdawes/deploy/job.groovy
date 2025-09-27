@@ -59,10 +59,12 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
                 //         gitHubTrustPermissions() //From users with Admin or Write permission
                 //     }
                 // }
-                // //Which PRs to specifically include/exclude from origin
-                // gitHubPullRequestDiscovery {
-                //     strategyId(2) //2 = The current pull request revision
-                // }
+                //Which PRs to specifically include/exclude from origin
+                gitHubPullRequestDiscovery {
+                    // strategyId(1) //1 = Merges the pull request with the current target branch revision
+                    // strategyId(2) //2 = The current pull request revision
+                    strategyId(3) //3 = Both the current pull request revision and the pull request merged with the current target branch revision
+                }
                 // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")
