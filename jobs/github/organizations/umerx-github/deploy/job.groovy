@@ -9,8 +9,8 @@ organizationFolder('jobs-v2/github/organizations/umerx-github/deploy') {
 
     // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
     buildStrategies {
-        buildRegularBranches()
         skipInitialBuildOnFirstBranchIndexing()
+        buildRegularBranches()
         buildChangeRequests {
             ignoreTargetOnlyChanges(false)
             ignoreUntrustedChanges(true)
