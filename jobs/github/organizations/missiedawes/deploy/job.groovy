@@ -14,7 +14,8 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
             atMostDays("1")
         }
         buildAllBranches {}
-        skipInitialBuildOnFirstBranchIndexing()
+        // Build branches on first index so we can use for CI/CD as part of pull requests.
+        // skipInitialBuildOnFirstBranchIndexing()
         // Even if the refs are found (Job added in Jenkins), only automatically Build the branches that match the regex.
         // buildNamedBranches {
         //     filters {
