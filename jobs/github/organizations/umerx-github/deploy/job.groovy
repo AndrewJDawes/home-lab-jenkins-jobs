@@ -9,7 +9,7 @@ organizationFolder('jobs-v2/github/organizations/umerx-github/deploy') {
 
     properties {
         suppressFolderAutomaticTriggering {
-            branches("*")
+            branches(".*")
             strategy("INDEXING")
         }
     }

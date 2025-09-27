@@ -9,7 +9,7 @@ organizationFolder('jobs-v2/github/organizations/missiedawes/deploy') {
 
     properties {
         suppressFolderAutomaticTriggering {
-            branches("*")
+            branches(".*")
             strategy("INDEXING")
         }
     }
