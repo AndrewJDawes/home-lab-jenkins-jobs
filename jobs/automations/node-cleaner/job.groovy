@@ -44,7 +44,7 @@ pipelineJob('jobs-v2/automations/node-cleaner') {
         stringParam('NODE_LABEL', 'docker')
         // SCRIPT
         // Prune
-        stringParam('SCRIPT', 'docker system prune -f')
+        stringParam('SCRIPT', 'docker system prune -f -a')
     }
 
     properties {
