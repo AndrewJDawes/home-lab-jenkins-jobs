@@ -15,6 +15,7 @@ organizationFolder('jobs-v2/github/organizations/umerx-github/deploy') {
         }
         buildAllBranches {}
         buildChangeRequests {
+            ignoreTargetOnlyChanges(false)
             ignoreUntrustedChanges(true)
         }
         // Build branches on first index so we can use for CI/CD as part of pull requests.
