@@ -7,9 +7,11 @@ organizationFolder('jobs-v2/github/organizations/codekaizen-github/deploy') {
 
     displayName("CodeKaizen GitHub Deploy")
 
-    suppressFolderAutomaticTriggering {
-        branches("*")
-        strategy("INDEXING")
+    properties {
+        suppressFolderAutomaticTriggering {
+            branches("*")
+            strategy("INDEXING")
+        }
     }
 
  // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
