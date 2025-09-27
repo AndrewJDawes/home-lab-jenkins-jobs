@@ -51,13 +51,15 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
                 // }
                 // Which branches to discover
                 gitHubBranchDiscovery {
+                    // strategyId(1) //1 = Exclude branches that are also filed as PRs
+                    // strategyId(2) //2 = Only branches that are not also filed as a pull request
                     strategyId(3) //3 = All branches: Ignores whether the branch is also filed as a pull request and instead discovers all branches on the origin repository.
                 }
                 // //Which PRs to specifically include/exclude from origin
                 gitHubPullRequestDiscovery {
-                    // strategyId(1) //1 = Merges the pull request with the current target branch revision
+                    strategyId(1) //1 = Merges the pull request with the current target branch revision
                     // strategyId(2) //2 = The current pull request revision
-                    strategyId(3) //3 = Both the current pull request revision and the pull request merged with the current target branch revision
+                    // strategyId(3) //3 = Both the current pull request revision and the pull request merged with the current target branch revision
                 }
                 //Which PRs to specifically include/exclude from forks
                 // gitHubForkDiscovery {
