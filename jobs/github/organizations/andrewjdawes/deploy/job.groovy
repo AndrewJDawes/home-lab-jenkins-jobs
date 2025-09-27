@@ -7,16 +7,16 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
 
     displayName("AndrewJDawes GitHub Deploy")
 
-    // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
+     // Requires this plugin: https://plugins.jenkins.io/basic-branch-build-strategies/
     buildStrategies {
-        buildTags {
-            atLeastDays("0")
-            atMostDays("1")
-        }
-        buildAllBranches {}
+        buildRegularBranches()
         buildChangeRequests {
             ignoreTargetOnlyChanges(false)
             ignoreUntrustedChanges(true)
+        }
+        buildTags {
+            atLeastDays("0")
+            atMostDays("1")
         }
         // Build branches on first index so we can use for CI/CD as part of pull requests.
         // skipInitialBuildOnFirstBranchIndexing()
@@ -34,24 +34,24 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
     organizations {
         github {
             apiUri("https://api.github.com")
-            repoOwner("AndrewJDawes")
-            credentialsId("github-app-user-andrewjdawes")
+            repoOwner("umerx-github")
+            credentialsId("github-app-organization-umerx")
             traits {
                 // Which repos to specifically include/exclude
                 // sourceWildcardFilter {
                 //     includes("*jenkins-example-action-rsync-deployment")
                 //     excludes("")
                 // }
-                // Discover all tags
-                gitHubTagDiscovery()
                 // Which branches to discover
                 gitHubBranchDiscovery {
                     strategyId(3) //3 = All branches: Ignores whether the branch is also filed as a pull request and instead discovers all branches on the origin repository.
                 }
-                // Other refs to discover
-                // discoverOtherRefs {
-                //     ref("deploy/*")
-                // }
+                // //Which PRs to specifically include/exclude from origin
+                gitHubPullRequestDiscovery {
+                    // strategyId(1) //1 = Merges the pull request with the current target branch revision
+                    // strategyId(2) //2 = The current pull request revision
+                    strategyId(3) //3 = Both the current pull request revision and the pull request merged with the current target branch revision
+                }
                 //Which PRs to specifically include/exclude from forks
                 // gitHubForkDiscovery {
                 //     strategyId(2) //2 = The current pull request revision
@@ -59,12 +59,12 @@ organizationFolder('jobs-v2/github/organizations/andrewjdawes/deploy') {
                 //         gitHubTrustPermissions() //From users with Admin or Write permission
                 //     }
                 // }
-                //Which PRs to specifically include/exclude from origin
-                gitHubPullRequestDiscovery {
-                    // strategyId(1) //1 = Merges the pull request with the current target branch revision
-                    // strategyId(2) //2 = The current pull request revision
-                    strategyId(3) //3 = Both the current pull request revision and the pull request merged with the current target branch revision
-                }
+                // Discover all tags
+                gitHubTagDiscovery()
+                // Other refs to discover
+                // discoverOtherRefs {
+                //     ref("deploy/*")
+                // }
                 // Filter to include/exclude specific refs. These won't even show in Jenkins. Cannot distinguish between branches and tags.
                 headWildcardFilter {
                     includes("*")
